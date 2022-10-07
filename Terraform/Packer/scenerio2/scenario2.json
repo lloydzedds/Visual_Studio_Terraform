@@ -45,7 +45,7 @@
         {
             "type": "shell",
             "inline":[
-                "echo this mod is from packer >> /usr/share/nginx/html"
+                "echo this mod is from packer >> /usr/share/nginx/html/index.html"
             ]
         }
     ]
