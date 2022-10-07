@@ -8,7 +8,7 @@
             "type": "amazon-ebs",
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
-            "region": "us-east-2",
+            "region": "eu-north-1",
             "source_ami_filter": {
                 "filters": {
                     "virtualization-type": "hvm",
@@ -20,9 +20,10 @@
                 ],
                 "most_recent": true
             },
-            "instance_type": "t2.micro",
+            "instance_type": "t3.micro",
             "ssh_username": "ubuntu",
             "ami_name": "scenario1-packer-{{timestamp}}"
         }
     ]
+    
 }
