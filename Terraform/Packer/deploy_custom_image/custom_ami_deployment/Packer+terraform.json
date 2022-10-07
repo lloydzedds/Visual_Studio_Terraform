@@ -27,34 +27,12 @@
     ],
     "provisioners": [
         {
-            "type": "file",
-            "source": "./my.txt",
-            "destination": "/home/ubuntu/"
-        },
-        {
-            "type": "shell",
-            "inline":[
-                "ls -al /home/ubuntu",
-                "cat /home/ubuntu/my.txt"
-            ]
-        },
-        {
             "type": "shell",
             "script": "./nginx.sh",
             "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
             "pause_before": "10s"
-        },
-        {
-            "type": "shell",
-            "script": "./mod_nginx.sh"
-        },
-        {
-            "type": "shell",
-            "inline":[
-                "ls -al /home/ubuntu",
-                "cat /home/ubuntu/my.txt"
-            ]
         }
+        
     
     ]
     
