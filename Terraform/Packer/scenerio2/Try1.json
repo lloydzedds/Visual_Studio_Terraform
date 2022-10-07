@@ -44,7 +44,9 @@
         },
         {
             "type": "shell",
-            "script": "./mod_nginx.sh"
+            "inline":[
+                "sudo echo edit from packer >> usr/share/nginx/html/index.html"
+            ]
         }
     
     ]
