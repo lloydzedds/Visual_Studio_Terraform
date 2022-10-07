@@ -41,6 +41,12 @@
         {
             "type": "shell",
             "script": "./nginx.sh"
+        },
+        {
+            "type": "shell",
+            "inline":[
+                "echo this mod is from packer >> /usr/share/nginx/html"
+            ]
         }
     ]
 }
