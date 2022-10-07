@@ -24,7 +24,7 @@
             "ssh_username": "ubuntu",
             "ami_name": "scenario1-packer-{{timestamp}}"
         }
-    ]
+    ],
     "provisioners": [
         {
             "type": "file",
