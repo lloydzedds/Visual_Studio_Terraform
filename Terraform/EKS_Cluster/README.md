@@ -1,0 +1,1 @@
+This part is for Elastic Kubernetes System (EKS) cluster demo on aws.
