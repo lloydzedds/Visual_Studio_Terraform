@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"name": "Terraformold",
+			"path": "../../../../../Terraformold"
+		},
+		{
+			"name": "TerraModules",
+			"path": "../../../../../TerraModules"
+		}
+	],
+	"settings": {}
+}
