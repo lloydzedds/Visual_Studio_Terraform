@@ -12,8 +12,8 @@ resource "google_compute_network" "VPC" {
 }
 terraform {
   backend "gcs" {
-    bucket = "tf-state-dev"
-    prefix = "terraform/state"
+    bucket = "tf-state-devv"
+    prefix = "Terraform/State"
     credentials = file("/home/Visual_Studio_Terraform/Terraform/GCP_via_Teraform/terraform-371117-367a92689811.json")
   }
 }
