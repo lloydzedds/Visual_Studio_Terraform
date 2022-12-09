@@ -1,5 +1,5 @@
 provider "google" {
-    credentials = file("/home/Visual_Studio_Terraform/Terraform/GCP_via_Teraform/terraform-371117-367a92689811.json")
+    credentials = file("terraform-371117-367a92689811.json")
 
     project = "terraform-371117"
     region = us-east1
@@ -14,6 +14,6 @@ terraform {
   backend "gcs" {
     bucket = "tf-state-devv"
     prefix = "Terraform/State"
-    credentials = file("/home/Visual_Studio_Terraform/Terraform/GCP_via_Teraform/terraform-371117-367a92689811.json")
+    credentials = file("terraform-371117-367a92689811.json")
   }
 }
