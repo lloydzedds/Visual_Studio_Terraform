@@ -8,7 +8,7 @@ module "develop-vpc" {
 }
 
 provider "aws" {
-  region = var.AWS_REGION
+  region = var.chandu_region
 }
 
 #Resource key pair
@@ -18,7 +18,7 @@ resource "aws_key_pair" "mod_key" {
 }
 
 #Secutiry Group for Instances
-resource "aws_security_group" "allow-ssh" {
+resource "aws_security_group" "allow-ssh-http" {
   vpc_id      = module.develop-vpc.my_vpc_id
   name        = "allow-ssh-${var.ENVIRONMENT}"
   description = "security group that allows ssh traffic"
@@ -36,6 +36,10 @@ resource "aws_security_group" "allow-ssh" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  egress = [ {
+    from_port =
+  } ]
 
   tags = {
     Name         = "allow-ssh"
