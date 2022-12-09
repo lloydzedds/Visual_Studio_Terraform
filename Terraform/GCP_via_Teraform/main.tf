@@ -5,6 +5,7 @@ provider "google" {
     region = us-east1
     zone = us-east1-c
 }
+
 resource "google_compute_network" "VPC" {
     name = "practice-network"
     auto_create_subnetworks = true
