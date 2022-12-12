@@ -11,11 +11,19 @@ resource "google_compute_network" "VPC" {
     auto_create_subnetworks = true
   
 }
-terraform {
-  backend "gcs" {
-    credentials = file("terraform-371117-9d27713c1607.json")
-    bucket = "tf-state-devv"
-    prefix = "Terraform/State"
-   
+resource "google_compute_instance" "Lloyd_instance" {
+  name = "Lloyd_instance"
+  machine_type = "e2-medium"
+  
+  boot_disk {
+    initialize_params {
+      image = "Ubuntu 20.04 LTS"
+    }
+  }
+  network_interface {
+    network = "practice-network"
+    access_config {
+
+    }
   }
 }
