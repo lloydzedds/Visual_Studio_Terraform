@@ -12,7 +12,7 @@ resource "google_compute_network" "VPC" {
   
 }
 resource "google_compute_instance" "vminstance" {
-  name = "Lloyd_instance"
+  name = "lloyd_instance"
   machine_type = "e2-medium"
 
   boot_disk {
