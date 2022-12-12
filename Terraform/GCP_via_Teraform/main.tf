@@ -11,8 +11,8 @@ resource "google_compute_network" "VPC" {
     auto_create_subnetworks = true
   
 }
-resource "google_compute_instance" "vm_instance" {
-  name = "vm_instance"
+resource "google_compute_instance" "vminstance" {
+  name = "vminstance"
   machine_type = "e2-medium"
 
   boot_disk {
