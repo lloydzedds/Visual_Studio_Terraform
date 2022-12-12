@@ -14,10 +14,10 @@ resource "google_compute_network" "VPC" {
 resource "google_compute_instance" "Lloyd_instance" {
   name = "Lloyd_instance"
   machine_type = "e2-medium"
-  
+
   boot_disk {
     initialize_params {
-      image = "Ubuntu 20.04 LTS"
+      image = "ubuntu-os-cloud/ubuntu-2004-lts"
     }
   }
   network_interface {
