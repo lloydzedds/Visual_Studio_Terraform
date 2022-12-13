@@ -12,13 +12,13 @@ provider "aws" {
 }
 
 #Resource key pair
-resource "aws_key_pair" "gcp_ansible" {
-  key_name      = "gcp_ansible"
+resource "aws_key_pair" "mod_key" {
+  key_name      = "mod_key"
   public_key    = file(var.public_key_path)
 }
 
 #Secutiry Group for Instances
-resource "aws_security_group" "allow-ssh-http" {
+resource "aws_security_group" "allow-ssh" {
   vpc_id      = module.develop-vpc.my_vpc_id
   name        = "allow-ssh-${var.ENVIRONMENT}"
   description = "security group that allows ssh traffic"
@@ -56,7 +56,7 @@ resource "aws_instance" "my-instance" {
   vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
 
   # the public SSH key
-  key_name = aws_key_pair.gcp_ansible.key_name
+  key_name = aws_key_pair.mod_key.key_name
 
   tags = {
     Name         = "instance-${var.ENVIRONMENT}"

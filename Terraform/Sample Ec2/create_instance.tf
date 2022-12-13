@@ -1,13 +1,15 @@
 # Create Instance uisng Custom VPC
 
 module "develop-vpc" {
-    source      = "../modules/vpc"
+    source      = "./modules/vpc"
 
     ENVIRONMENT = var.ENVIRONMENT
     AWS_REGION  = var.AWS_REGION
 }
 
 provider "aws" {
+  access_key = "${var.AWS_ACCESS_KEY}"
+  secret_key = "${var.AWS_SECRET_KEY}"
   region = var.AWS_REGION
 }
 
@@ -53,7 +55,7 @@ resource "aws_instance" "my-instance" {
   availability_zone = "${var.AWS_REGION}a"
 
   # the security group
-  vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
+  vpc_security_group_ids = ["${aws_security_group.allow-ssh-http.id}"]
 
   # the public SSH key
   key_name = aws_key_pair.gcp_ansible.key_name
