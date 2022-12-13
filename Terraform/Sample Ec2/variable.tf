@@ -9,6 +9,16 @@ variable "ENVIRONMENT" {
     default = "development"
 }
 
+variable "AWS_ACCESS_KEY" {
+  
+}
+
+variable "AWS_SECRET_KEY" {
+    type = string
+    default = "AWS_"
+  
+}
+
 variable "AMI_ID" {
     type = string
     default = "ami-0fd303abd14827300"
