@@ -53,7 +53,7 @@ resource "aws_instance" "my-instance" {
   availability_zone = "${var.AWS_REGION}a"
 
   # the security group
-  vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
+  vpc_security_group_ids = ["${aws_security_group.allow-ssh-http.id}"]
 
   # the public SSH key
   key_name = aws_key_pair.gcp_ansible.key_name
