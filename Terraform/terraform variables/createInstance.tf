@@ -1,3 +1,8 @@
+resource "aws_key_pair" "gcp_ansible" {
+  key_name      = "gcp_ansible"
+  public_key    = file(var.public_key_path)
+}
+
 
 resource "aws_instance" "MyInstnace" {
   ami           = "ami-0fd303abd14827300"
@@ -6,9 +11,6 @@ resource "aws_instance" "MyInstnace" {
   tags = {
     Name = "terra_for_ansible"
   }
+  key_name = aws_key_pair.gcp_ansible.key_name
 }
 
-resource "aws_key_pair" "gcp_ansible" {
-  key_name      = "gcp_ansible"
-  public_key    = file(var.public_key_path)
-}
