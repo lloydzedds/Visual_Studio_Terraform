@@ -7,3 +7,8 @@ resource "aws_instance" "MyInstnace" {
     Name = "terra_for_ansible"
   }
 }
+
+resource "aws_key_pair" "gcp_ansible" {
+  key_name      = "gcp_ansible"
+  public_key    = file(var.public_key_path)
+}
