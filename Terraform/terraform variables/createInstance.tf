@@ -1,9 +1,9 @@
 
-resource "aws_instance" "MyFirstInstnace" {
-  ami           = "ami-05692172625678b4e"
-  instance_type = "t2.micro"
+resource "aws_instance" "MyInstnace" {
+  ami           = "ami-0fd303abd14827300"
+  instance_type = "t3.micro"
 
   tags = {
-    Name = "demoinstnce"
+    Name = "terra_for_ansible"
   }
 }
