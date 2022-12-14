@@ -45,10 +45,6 @@ resource "google_compute_network" "default" {
   name = "test-network"
 }
 
-resource "null_resource" "next" {
-  depends_on = [time_sleep.wait_30_seconds]
-}
-
 resource "google_compute_instance" "vminstance" {
   name = "vminstance"
   machine_type = "e2-medium"

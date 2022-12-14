@@ -1,7 +1,7 @@
 provider "google" {
-    credentials = file("terraform-371117-9d27713c1607.json")
+    credentials = file("ansible-gcp-service-account.json")
 
-    project = "terraform-371117"
+    project = "ansible-371117"
     region = "asia-south1"
     zone = "asia-south1-c"
 }
